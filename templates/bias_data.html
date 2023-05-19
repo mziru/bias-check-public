@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bias Response</title>
+    <link rel="stylesheet" href= {{ url_for('static', filename='css/stylesheet.css')  }}>
+</head>
+<body style="background-color: #fff;
+             padding-bottom: 20px;
+             font-family: 'Lato', Calibri, Arial, sans-serif">
+
+<span><b>URL: </b>{{form_data['URL']}}</span>
+<br>
+<br>
+<div>
+      {{ table | safe }}
+</div>
+
+
+</body>
+
+<script type="text/javascript" src={{ url_for('static', filename='js/iframeResizer.contentWindow.js') }}></script>
+</html>

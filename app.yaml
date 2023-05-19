@@ -1,0 +1,6 @@
+runtime: python310
+instance_class: F4y
+handlers:
+
+- url: .*
+  script: main.app

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bias Input</title>
+    <link rel="stylesheet" href={{ url_for('static', filename='css/stylesheet.css') }}>
+</head>
+<body style="background-color: #fff">
+<div class="container tab-section" style="background-color: #fff">
+<form action="/bias-data" method = "POST">
+    <p>Enter a URL: <textarea name = "URL" style="width: 100%;"></textarea></p>
+    <input type="checkbox" id="increase_accuracy" name="increase_accuracy" value="increase_accuracy" style="accent-color: rgb(244, 237, 255)">
+    <label for="increase_accuracy">higher accuracy (takes longer and uses more tokens)</label>
+    <div style="text-align: center; padding-bottom: 20px;"><input id="chat-submit"
+                                           type = "submit"
+                                           value = "Submit"
+                                           style = "display: inline-block;
+                                                    font-family: 'Lato',Calibri,Arial,sans-serif !important;
+                                                    margin: 10px 0;
+                                                    padding: 6px 15px;
+                                                    font-size: 14px;
+                                                    border-radius: 4px;
+                                                    background-color: #ffffff;
+                                                    border-style: solid;
+                                                    border-color: #222222;
+                                                    border-width: 1px;
+                                                    color: rgb(203, 169, 253) !important;
+                                                    text-decoration: none;
+                                                    cursor:pointer;"/>
+    </div>
+    <div id="wait-message" style="display:none; padding-bottom: 20px">Waiting for an answer...</div>
+
+<script>
+    document.getElementById("chat-submit").addEventListener('click', function () {
+        var submitButton = document.getElementById("chat-submit");
+        var waitMessage = document.getElementById("wait-message");
+        submitButton.style.display = 'none';
+        waitMessage.style.display = 'block';} );
+
+</script>
+</form>
+</div>
+</body>
+
+<script type="text/javascript" src={{ url_for('static', filename='js/iframeResizer.contentWindow.js') }}></script>
+</html>

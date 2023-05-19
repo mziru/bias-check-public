@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href={{ url_for('static', filename='img/favicon.ico') }}>
+    <title>Bias Check Demo</title>
+    <link rel="stylesheet" href={{ url_for('static', filename='css/stylesheet.css') }}>
+    <link rel="stylesheet" href= "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.css">
+
+</head>
+<body>
+  <section id="main">
+  <div class="container tab-section">
+  <article>
+    <h2>
+        URL Bias Check w/ Structured Output
+    </h2>
+    <div> Created by Martin Zirulnik: <a class="text-link" href="https://mziru.com" target="_blank">https://mziru.com</a></div>
+    <p>
+        This is a homepage for a simple app, powered by GPT-4, that leverages Langchain to
+    <ol>
+      <li>identify potential sources of bias in unstructured text loaded from URLs,</li>
+      <li>evaluate these based on how likely each one is to produce false, misleading, or inaccurate information, </li>
+      <li>output a structured dataset containing the results</li>
+  </ol>
+      <div>
+          <b>Note</b>: This currently supports HTML documents, including webpages that require JavaScript to render. Response times vary depending on traffic
+          to OpenAI's servers.
+      </div>
+      <br>
+      <div style="text-align: center">
+<script src={{ url_for('static', filename='js/iframeResizer.js') }}></script>
+        <iframe id=iframe src='/bias-form' style="display: block;
+                                             width: 1px !important;
+                                             min-width: 100% !important;
+                                             border: none;
+                                             background-color: #fff;
+                                             filter: unset !important;"></iframe >
+          <script>
+  iFrameResize({ log: true }, '#iframe')
+          </script>
+
+        <button onclick="refreshIframe();"
+                style = "display: inline-block;
+                        font-family: 'Lato',Calibri,Arial,sans-serif;
+                        text-align: center;
+                        margin: 10px 0;
+                        padding: 6px 15px;
+                        font-size: 14px;
+                        border-radius: 4px;
+                        background-color: #ffffff;
+                        border-style: solid;
+                        border-color: #222222;
+                        border-width: 1px;
+                        color: rgb(203, 169, 253) !important;
+                        text-decoration: none;
+                        cursor:pointer;">
+            <i class="fa fa-refresh"></i> Refresh </button>
+
+<script>
+    function refreshIframe() {
+    var ifr = document.getElementById('iframe');
+    ifr.src = ifr.src;
+}</script>
+      </div>
+
+  </article>
+      <span style="text-align: center; display: block">&copy Martin Zirulnik</span>
+  </div>
+
+  </section>
+</body>
+
+
+</html>
