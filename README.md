@@ -26,4 +26,5 @@
         <li>Run 'main.py'</li>
     </ol>
     </h3>
+    <p>Here's some curious output for the Wikipedia page on OpenAI: a slippery sort of recursion happens when the language model evaluates "source bias" in language that describes language used to train an earlier version of the model:</p>
     <img src="static/img/bias_readme.png" width="100%">
